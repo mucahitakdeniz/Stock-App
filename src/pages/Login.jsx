@@ -9,7 +9,6 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-
 const Login = () => {
   const loginSchema = () => {};
   return (
@@ -20,12 +19,12 @@ const Login = () => {
         direction="row-reverse"
         sx={{ height: "100vh", p: 2 }}
       >
-        <Grid>
+        <Grid item xs={12} mb={3}>
           <Typography variant="h3" color="primary.dark" align="center">
             STOCK APP
           </Typography>
         </Grid>
-        <Grid>
+        <Grid item xs={12} sm={10} md={6}>
           <Avatar
             sx={{
               backgroundColor: "secondary.dark",
@@ -55,7 +54,7 @@ const Login = () => {
           >
             {({ handleChange, handleBlur, values, touched, errors }) => (
               <Form>
-                <Box>
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
                   <TextField
                     label="Email"
                     name="email"
@@ -88,7 +87,10 @@ const Login = () => {
             )}
           </Formik>
           <Box>
-            <Link to="/register" xs={10} sm={7} md={6} > Hesabınız yok mu?</Link>
+            <Link to="/register" xs={10} sm={7} md={6}>
+              {" "}
+              Hesabınız yok mu?
+            </Link>
           </Box>
         </Grid>
       </Grid>
