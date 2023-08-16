@@ -12,9 +12,9 @@ import { object, string } from "yup";
 
 const Login = () => {
   const loginSchema = object({
-    userName: string().required("Bu alan zorunludur"),
-    lastName: string().required("Bu alan zorunludur"),
-    firstName: string().required("Bu alan zorunludur"),
+    username: string().required("Bu alan zorunludur"),
+    lastname: string().required("Bu alan zorunludur"),
+    firstname: string().required("Bu alan zorunludur"),
     email: string()
       .email("Lütfen valid bir email giriniz")
       .required("Bu alan zorunludur"),
@@ -76,19 +76,23 @@ const Login = () => {
                     id="userName"
                     type="text"
                     variant="outlined"
+                    onChange={handleChange}
+                    value={values.value}
                     onBlur={handleBlur}
-                    error={touched.userName && Boolean(errors.userName)}
-                    helperText={errors.userName}
+                    error={touched.username && Boolean(errors.username)}
+                    helperText={errors.username}
                   ></TextField>
                   <TextField
                     label="First Name"
                     name="firstname"
-                    id="firstame"
+                    id="firstName"
                     type="text"
                     variant="outlined"
+                    onChange={handleChange}
+                    value={values.value}
                     onBlur={handleBlur}
-                    error={touched.firstName && Boolean(errors.firstName)}
-                    helperText={errors.firstName}
+                    error={touched.firstname && Boolean(errors.firstname)}
+                    helperText={errors.firstname}
                   ></TextField>
                   <TextField
                     label="Last Name"
@@ -96,6 +100,8 @@ const Login = () => {
                     id="lastName"
                     type="text"
                     variant="outlined"
+                    onChange={handleChange}
+                    value={values.value}
                     onBlur={handleBlur}
                     error={touched.lastname && Boolean(errors.lastname)}
                     helperText={errors.lastname}
