@@ -8,9 +8,21 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import { object, string } from "yup";
 
 const Login = () => {
-  const loginSchema = () => {};
+  const loginSchema = object({
+    email: string()
+      .email("Lütfen valid bir email giriniz")
+      .required("Bu alan zorunludur"),
+    password: string()
+      .required("Bu alan zorunludur")
+      .min(8, "En az 8 karakter olmalıdır")
+      .max(16, "En fazla 16 karakter girilmelidir")
+      .matches(/[a-z]/, "En az bir küçük harf içermelidir")
+      .matches(/[A-Z]/, "En az bir büyük harf içermelidir")
+      .matches(/[!;:?-_<>%$€₺*/\-+:`;]/, "En az bir özel karakter içermelidir"),
+  });
   return (
     <Container maxWidth="lg">
       <Grid
@@ -88,7 +100,7 @@ const Login = () => {
           </Formik>
           <Box sx={{ textAlign: "center", mt: 5 }}>
             <Link to="/register" xs={12} sm={7} md={6}>
-              Hesabınız yok mu?
+            Hesabınız yok mu? 
             </Link>
           </Box>
         </Grid>
