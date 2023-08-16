@@ -97,8 +97,8 @@ const Login = () => {
                     type="text"
                     variant="outlined"
                     onBlur={handleBlur}
-                    error={touched.lastName && Boolean(errors.lastName)}
-                    helperText={errors.lastName}
+                    error={touched.lastname && Boolean(errors.lastname)}
+                    helperText={errors.lastname}
                   ></TextField>
                   <TextField
                     label="Email"
