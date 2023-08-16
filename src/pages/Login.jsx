@@ -86,9 +86,8 @@ const Login = () => {
               </Form>
             )}
           </Formik>
-          <Box>
-            <Link to="/register" xs={10} sm={7} md={6}>
-              {" "}
+          <Box sx={{ textAlign: "center", mt: 5 }}>
+            <Link to="/register" xs={12} sm={7} md={6}>
               Hesabınız yok mu?
             </Link>
           </Box>
